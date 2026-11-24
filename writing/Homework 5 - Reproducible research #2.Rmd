@@ -25,4 +25,12 @@ homicides <- homicides %>%
 ```
 
 
+Filtering to one city (Atlanta) and removing missing coordinates 
 
+```{r}
+
+atl_homicides <- homicides %>% 
+  filter(city_name == "Atlanta, GA") %>%
+  filter(!is.na(lat), !is.na(lon))
+
+```
