@@ -34,3 +34,26 @@ atl_homicides <- homicides %>%
   filter(!is.na(lat), !is.na(lon))
 
 ```
+
+
+Adding a solved vs unsolved column (status) in the data frame
+
+```{r}
+
+# ?case_when
+
+atl_solved <- atl_homicides %>%
+  mutate(status = case_when(
+    disposition == "Closed by arrest" ~ "Solved",
+    disposition %in% c("Closed without arrest","Open/No arrest") ~ "Unsolved"))
+
+```
+
+
+
+
+
+
+
+
+
