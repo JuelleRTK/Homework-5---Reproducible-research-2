@@ -63,8 +63,19 @@ atl_top3 <- atl_solved %>%
 
 ```
 
+Converting latitude and longitude columns into sf objects
+
+```{r}
+
+library(sf)
+
+# ?st_as_sf
+
+atl_sf <- st_as_sf(atl_top3, coords = c("lon", "lat"),
+                   crs = 4326)
 
 
+```
 
 
 
