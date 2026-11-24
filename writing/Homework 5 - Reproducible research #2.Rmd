@@ -49,7 +49,19 @@ atl_solved <- atl_homicides %>%
 
 ```
 
+Creating a new column for top 3 race groups with the highest number of homicides in Atlanta
 
+```{r}
+
+library(forcats)
+
+# ?fct_lump
+
+atl_top3 <- atl_solved %>%
+  mutate(race_top3 = fct_lump(victim_race, n = 3,
+                              other_level = "Other"))
+
+```
 
 
 
